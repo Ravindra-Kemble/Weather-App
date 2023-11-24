@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@300&display=swap');
+body {
+    background-color: #ecf0f1 !important;    
+    color: #2c3e50 !important;
+    text-align: center;
+    padding-top: 2%;
+    font-family: 'Arima' !important;
+}
+
+.card-body{
+    text-align: center !important;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+form {
+    margin: 30px auto;
+    width: 90% !important;
+}
+
+form h2 {
+    margin: 20px 0px 30px 0px;
+}
+
+form input,
+label {
+    margin: 5px 0px;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid rgb(80, 208, 168);
+}
+
+.container {
+    width: 90% !important;
+}
+
+.info {
+    display: flex;
+}
+
+.button {
+    background-color: rgb(29, 202, 190);
+}
+
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for flashed messages */
+.flash-container {
+    width: 300px;
+    margin: 20px auto;
+}
+
+.flash-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+}

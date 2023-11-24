@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..."
+    crossorigin="anonymous" />
+    
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/stylesheet.css') }}"/>
+
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/bootstrap.css') }}"/>
+
+    <title>ClimaSense</title>
+
+</head>
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for message in messages %}
+            <div class="flash-message">
+                <li>{{ message }}</li></div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+
+    <form class="contianer" method="post" action="{{ url_for('index') }}">
+        <h1><i class="bi bi-cloud-haze"></i>ClimaSense</h1>
+
+        <div class="form-group">
+            <label>Enter your City Name</label><br><br>
+            <input 
+            type="text" 
+            class="form-control-lg" 
+            placeholder="City Name" 
+            name="name"
+            size="50"
+            />
+        </div>
+
+        <br />
+        <button type="submit" class="button" role="button">Search Now</button>
+    </form>
+
+    <div class="container" align="center">
+        <div class="row">
+            <div class="col">
+                <div class="card text-dark bg-white mb-3" style="max-width: 20rem;">
+                    <div class="card-body">
+                        <h1 class="card-title">{{ city_name }}</h1>
+                        <div class="info">
+                            <div class="right" >
+                                <h3 class="card-text">{{ temp }}&deg;C</h3>
+                                <h4 class="card-text">{{ weather }}</h4>
+                            </div>
+                            <div class="left">
+                                &nbsp;&nbsp;
+
+                                <img src="http://openweathermap.org/img/wn/{{ icon }}.png" alt="" />
+                            </div>
+                        </div>
+
+                        <br />
+                        <h5 align="left">Humidity : {{ humidity }}%</h5>
+                        <h5 align="left">Min Temp : {{ min_temp }}&deg;C</h5>
+                        <h5 align="left">Max Temp : {{ max_temp }}&deg;C</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
