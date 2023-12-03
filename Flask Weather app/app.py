@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import requests
 
 
-API_KEY = '5c26f5f1defe523c236deed6570b5cf6' # You
+API_KEY =  # You
 app = Flask(__name__)
 app.secret_key = "fknjksfnklsfjlsflkgsjljdl;jv;lsjd"
 
